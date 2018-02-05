@@ -17,12 +17,20 @@ Print all found words to STDOUT.
 
 =cut
 
-open( my $fh, "<", "index2.html" );
+my $inside_body;
+
+open( my $fh, "<", "index.html" );
 
 while ( my $row = <$fh> ) {
     chomp $row;
 
-    if ($row =~ m/<body>.*(\>)*.*([[:alpha:]])\1.*(\<\/)*.*<\/body>/ig) {
-    	say("$row - MATCH");	
+    $inside_body = 1 if $row eq "<body>";
+    $inside_body = 0 if $row eq "</body>";
+
+    if ($inside_body and $row =~ m/\>(.)*\</igm) {
+    	say($row);
+    	if ($row =~ m/(\w)\1/) {
+    		say ("lala");
+    	}
     }
 }

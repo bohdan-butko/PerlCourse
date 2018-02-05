@@ -68,4 +68,4 @@ sub print_res(\@;$) {
 		}
 	}	
 }
-1;
+return 1;

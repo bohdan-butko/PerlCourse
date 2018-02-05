@@ -27,4 +27,4 @@ sub setFirstName {
   $self->{_firstName} = $firstName if defined($firstName);
   return $self->{_firstName};
 }
-1;
+return 1;

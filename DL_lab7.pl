@@ -26,6 +26,11 @@ The program accepts X, Y and P as optional parameters.
 
 =cut
 
+# my @matrix = gen($ARGV[0], $ARGV[1], $ARGV[2]);
+# my @results = min_max_avg(\@matrix);
+# print_matrix(\@matrix, \@results);
+
+
 my @matrix = DL_lab7::gen($ARGV[0], $ARGV[1], $ARGV[2]);
 my @results = DL_lab7::min_max_avg(\@matrix);
 DL_lab7::print_matrix(\@matrix, \@results);

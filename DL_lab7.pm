@@ -64,4 +64,4 @@ sub print_matrix($matrix, $results) {
 	say("Max value: $max");
 	say("Avg value: $avg");
 }
-1;
+return 1;

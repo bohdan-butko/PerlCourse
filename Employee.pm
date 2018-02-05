@@ -29,5 +29,4 @@ sub DESTROY {
   print "Employee::DESTROY called\n";
 }
 
-1;
-
+return 1;

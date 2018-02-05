@@ -72,5 +72,4 @@ sub handle_dir {
         closedir($dh) or die "Couldn't close dir: $dir, $!";
     }
 }
-1;
-
+return 1;
