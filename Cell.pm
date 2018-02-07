@@ -12,7 +12,7 @@ package Cell {
 			i => shift,
 			j => shift,
 			is_occupied => 0,
-			sign => ". ",
+			sign => ".",
 		};
 
 		bless $self, $class;
@@ -22,8 +22,7 @@ package Cell {
 	sub is_occupied {
 		my $self = shift;
 
-		return 1 if $self->{is_occupied};
-		return 0 if $self->{is_occupied};
+		return $self->{is_occupied};
 	}
 
 	sub occupy($) {
@@ -37,11 +36,24 @@ package Cell {
 		my $self = shift;
 
 		$self->{is_occupied} = 0;
+		$self->{sign} = ".";
 	}
 
-	sub print_cell($) {
+	sub is_trap {
 		my $self = shift;
-		$self->{sign} = shift;
+
+		return $self->{is_trap};
+	}
+
+	sub set_trap {
+		my $self = shift;
+		
+		$self->{sign} = "#";
+		$self->{is_trap} = 1;
+	}
+
+	sub print_cell() {
+		my $self = shift;
 
 		print($self->{sign}, " ");
 	}
